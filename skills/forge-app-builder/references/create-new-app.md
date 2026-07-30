@@ -10,7 +10,7 @@ Check prerequisites only when creation is imminent. Retrieve current requirement
 
 Confirm the destination, app name, and Developer Space. If multiple spaces are available, require the user to choose. If one is available, inform the user before using it. Explain that `forge create` registers an external app identity in the selected Developer Space.
 
-Immediately before non-interactive creation, show that the current CLI will accept Forge terms and any applicable billing consent, then obtain explicit authorization. If authorization is absent, let the user complete the current interactive `forge create` flow; never accept terms on the user's behalf.
+Immediately before non-interactive creation, show that the helper passes the current CLI option for accepting Forge terms and any applicable billing consent, then obtain explicit authorization. Do not invoke the helper without that authorization. If authorization is absent, let the user complete the current interactive `forge create` flow; never accept terms on the user's behalf.
 
 ## Choose one scaffold branch
 
@@ -21,12 +21,13 @@ Prefer a current module-specific `forge create` template when it cleanly matches
 Run the helper from the skill directory:
 
 ```bash
+python3 -m scripts.list_templates --validate <current-documented-template>
+
 python3 -m scripts.create_forge_app \
   --template <current-documented-template> \
   --name <app-name> \
   --dev-space-id <selected-id> \
-  --directory <parent-directory> \
-  --accept-terms
+  --directory <parent-directory>
 ```
 
 ### Compositional branch
@@ -35,11 +36,10 @@ Consider a blank `forge create` app when the app needs several modules, no suita
 
 ```bash
 python3 -m scripts.create_forge_app \
-  --blank \
+  --template blank \
   --name <app-name> \
   --dev-space-id <selected-id> \
-  --directory <parent-directory> \
-  --accept-terms
+  --directory <parent-directory>
 ```
 
 Before using `forge module add`, retrieve its current lifecycle and CLI documentation. If it is non-GA, obtain agreement to that exposure. Inspect `forge module add --dry-run` before applying changes, and never use `--force` without explicit approval for the specific overwrites or dependency upgrades.
