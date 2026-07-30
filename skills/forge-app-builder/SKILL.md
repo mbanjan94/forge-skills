@@ -1,6 +1,11 @@
 ---
 name: forge-app-builder
 description: Plan, build, scaffold, or safely extend Atlassian Forge apps using current official documentation. Use for fresh Forge apps, existing-app feature work, module and manifest changes, UI Kit or Custom UI implementation, backend functions and events, Atlassian or external APIs, storage, permissions, environment configuration, distribution-affecting implementation, validation, and explicitly authorized deployment or installation; route standalone debugging and specialist reviews to their dedicated skills.
+license: Apache-2.0
+metadata:
+  labels: "confluence,jira,bitbucket,atlassian,forge"
+  maintainer: amoore
+  namespace: cloud
 ---
 
 # Forge App Builder
