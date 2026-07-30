@@ -53,4 +53,12 @@ Official entries:
 
 ## Handle creation failure
 
-Show the complete failure and address it through the current documented workflow. If interaction is required, provide the exact current interactive command for the user. Never construct a replacement app ID or manual scaffold.
+Show the complete failure and triage it by cause:
+
+- If the CLI requires interaction, provide the exact current interactive `forge create` command for the user to run in their terminal.
+- If no Developer Space exists, direct the user to create one in the Atlassian developer console, then retry after they confirm the target.
+- If the destination already exists, use a different confirmed name or destination. Never delete or overwrite the existing directory without explicit authorization.
+- If authentication is missing or expired, direct the user to run `forge login` interactively without sharing credentials, then retry.
+- For any other failure, preserve the command output, retrieve the relevant current documentation, and explain what blocks creation before asking for the input or external change needed to continue.
+
+Never construct a replacement app ID or manual scaffold. Route to `forge-debugger` if diagnosis of a persistent failure becomes the primary task.

@@ -16,9 +16,13 @@ python3 -m scripts.deploy_forge_app \
   --env <confirmed-environment>
 ```
 
+Run the helper from the skill directory. It checks the local Node.js, Forge CLI, authentication, and app registration state; installs dependencies unless `--skip-deps` is set; runs `forge lint`; deploys; and installs only when installation was requested. It detects Jira and Confluence requirements from manifest modules and scopes and installs on every detected product in addition to the confirmed primary product. Confirm those products before invoking an authorized installation; detection does not replace user authorization or exact-target confirmation.
+
+The helper does not replace repository tests, type checks, or a required Custom UI production build. Run those checks before the helper when applicable.
+
 Use `--deploy-only` when installation was not authorized. Do not use this helper for bulk upgrades, promotions, or production rollout decisions; retrieve and execute the exact current CLI workflow for those operations.
 
-Report the target and result of release actions along with any remaining verification.
+Report the validation performed and its results. For release actions, also report the exact app, environment, site, products, action, outcome, and any verification that remains.
 
 Official entries:
 
