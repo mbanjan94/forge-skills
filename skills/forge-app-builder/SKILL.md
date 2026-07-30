@@ -42,7 +42,7 @@ Continue here when diagnosis or review is incidental to active build work. If th
 
 ## Ground the selected route
 
-Read [references/documentation-routing.md](references/documentation-routing.md) when current platform detail is needed. Use the Forge MCP capabilities actually available in the session; discover them by purpose rather than assuming permanent tool names. Use focused official Atlassian documentation as fallback and for critical verification.
+Read [references/documentation-routing.md](references/documentation-routing.md) when current platform detail is needed. Use Forge MCP as the first preference whenever it is available. Discover its current capabilities by purpose rather than assuming permanent tool names, and call the narrowest relevant capability before relying on web documentation or remembered platform knowledge. Use focused official Atlassian documentation when MCP is unavailable, fails, or lacks the exact coverage needed, and for critical verification.
 
 Call the general Forge development guide when broad orientation is useful. Do not call it merely to satisfy a ritual when the task needs only one known leaf reference. Retrieve the exact module, manifest property, endpoint, scope, or CLI page before relying on it.
 
