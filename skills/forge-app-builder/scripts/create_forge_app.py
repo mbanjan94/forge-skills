@@ -97,7 +97,7 @@ def create_app(template, app_name, output_dir=None, dev_space_id=None):
     """
     
     if not validate_prerequisites():
-        print("❌ Prerequisites missing. Ensure Forge CLI and Node.js v22+ are installed.")
+        print("❌ Prerequisites missing. Ensure Forge CLI and a currently supported Node.js version are installed.")
         print("   Install: npm install -g @forge/cli")
         return False
     

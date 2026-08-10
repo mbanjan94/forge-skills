@@ -3,10 +3,8 @@
 List all available Forge templates.
 
 Fetches the official template list from Atlassian's template registry.
-Includes 154 templates across all Atlassian products.
 
 Source: https://forge-templates.us-west-2.prod.public.atl-paas.net/templates.json
-Last verified: February 2025
 """
 
 import json

@@ -92,7 +92,7 @@ def check_node():
         print_success(f"Node.js {version} found")
         return True
     except:
-        print_error("Node.js not found. Please install Node.js 22 LTS")
+        print_error("Node.js not found. Install a currently supported version from the Forge documentation")
         return False
 
 
